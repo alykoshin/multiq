@@ -1,0 +1,12 @@
+{
+  "generator-mini-package": {
+    "promptValues": {
+      "pkgDesc": "Simple multiple queues implementation",
+      "keywords": [
+        "queue",
+        "multiple",
+        "multi"
+      ]
+    }
+  }
+}
