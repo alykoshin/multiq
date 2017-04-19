@@ -1,6 +1,6 @@
 {
   "name": "multiq",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Simple multiple queues implementation",
   "main": "./index.js",
   "engines": {
@@ -32,7 +32,7 @@
     "coverall": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "keywords": [
-      "queue,multiple,multi"
+    "queue,multiple,multi"
   ],
   "author": "Alexander <alykoshin@gmail.com>",
   "license": "MIT",
