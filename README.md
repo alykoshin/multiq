@@ -22,7 +22,103 @@ If you have different needs regarding the functionality, please add a [feature r
 npm install --save multiq
 ```
 
-## Usage
+# Usage
+
+## constructor `new Multiq(options)`
+
+Syntax:
+
+```js
+const multiq = new Multiq({ timeout: 100 });
+```
+
+`options` object:
+- `timeout` - `number` - value in milliseconds 
+
+
+## `put(queueName, data, done)`
+
+Method `put()` return number of documents matching query.
+
+Syntax:
+
+```js
+multiq.put(queueName, data, done);
+```
+
+`queueName` - queue name
+
+`data` - object to put into queue named `queueName` 
+
+`done` - callback to be called after the element will be taken from the queue and processed (or after timeout reached)
+
+
+## `get(queueName, callback)`
+
+Method `put()` puts object into the queue named `queueName`.
+
+Syntax:
+
+```js
+multiq.get(queueName, callback);
+```
+
+`queueName` - queue name
+
+`callback` - callback to be called after the element will be processed.
+
+
+## `length(queueName)`
+
+Method `length()` returns number of objects in queue named `queueName`.
+
+Syntax:
+
+```js
+console.log( multiq.length('some-queue') );
+```
+
+`queueName` - queue name
+
+
+## `isEmpty(queueName)`
+
+Method `isEmpty()` returns `true` if queue named `queueName` is empty, `false` otherwise.
+
+Syntax:
+
+```js
+console.log( multiq.isEmpty('some-queue') );
+```
+
+`queueName` - queue name
+
+
+# Examples:
+
+```js
+'use strict';
+
+const Multiq = require('multiq');
+//const Multiq = require('../');
+
+const multiq = new Multiq({ timeout: 100 });
+
+multiq.put('some-queue', { key: 'value'}, (err) => {
+  if (err) return console.log('err:', err);
+  console.log('done');
+});
+
+console.log('length:', multiq.length('some-queue') );
+
+console.log('isEmpty:', multiq.isEmpty('some-queue') );
+
+multiq.get('some-queue', (data, done) => {
+  console.log('got data from queue:', data);
+  done();
+});
+```
+
 
 
 ## Credits

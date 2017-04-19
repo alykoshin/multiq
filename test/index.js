@@ -67,6 +67,16 @@ describe('multiq', function () {
     expect(res).to.be.eql(data);
   });
 
+  it('get objects from empty queues without callbacks (sync)', function () {
+    const multiq = new Multiq();
+    const queueName = 'a';
+    //const data = { key: 'value' };
+    //multiq.put(queueName, data);
+    expect(() => {
+      let res = multiq.get(queueName);
+    }).to.throw('is empty');
+  });
+
   it('get objects from queues with callbacks (async)', function (done) {
     const multiq = new Multiq();
     const queueName = 'a';
@@ -75,9 +85,19 @@ describe('multiq', function () {
       // doneCallback
       done(err); // must return no error
     });
-    multiq.get(queueName, (res, doneCallback) => {
+    multiq.get(queueName, (err, res, doneCallback) => {
+      expect(err).to.be.a('null');
       expect(res).to.be.eql(data);
       doneCallback();
+    });
+  });
+
+  it('get objects from empty queue with callbacks (async)', function (done) {
+    const multiq = new Multiq();
+    const queueName = 'a';
+    multiq.get(queueName, (err, res, doneCallback) => {
+      expect(err).to.be.an('error');
+      done();
     });
   });
 
