@@ -1,6 +1,6 @@
 {
   "name": "multiq",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple multiple queues implementation",
   "main": "./index.js",
   "engines": {
@@ -44,8 +44,7 @@
     "url": "https://github.com/alykoshin/multiq/issues"
   },
   "homepage": "https://github.com/alykoshin/multiq",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-things": "^0.2.0",
