@@ -108,6 +108,8 @@ describe('multiq', function () {
     multiq.put(queueName, data, (err) => {
       // doneCallback
       expect(err).to.be.an('error');
+      expect(err.code).to.be.equal('timeout');
+      console.log('err:',err)
       expect(multiq.length(queueName)).to.be.equal(0);
       done();
     });
