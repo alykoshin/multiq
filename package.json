@@ -1,6 +1,6 @@
 {
   "name": "multiq",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple multiple queues implementation",
   "main": "./index.js",
   "engines": {
