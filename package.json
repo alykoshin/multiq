@@ -46,16 +46,16 @@
   "homepage": "https://github.com/alykoshin/multiq",
   "dependencies": {},
   "devDependencies": {
-    "chai": "^4.0.0",
+    "chai": "^4.0.2",
     "chai-things": "^0.2.0",
     "coveralls": "^2.13.1",
-    "eslint": "^3.19.0",
+    "eslint": "^4.2.0",
     "istanbul": "^0.4.5",
-    "jshint": "^2.9.4",
-    "jsinspect": "^0.12.4",
+    "jshint": "^2.9.5",
+    "jsinspect": "^0.12.6",
     "mocha": "^3.4.2",
     "mocha-sinon": "^2.0.0",
-    "mockery": "^2.0.0",
-    "sinon": "^2.3.2"
+    "mockery": "^2.1.0",
+    "sinon": "^2.3.6"
   }
 }
